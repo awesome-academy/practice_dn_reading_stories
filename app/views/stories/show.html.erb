@@ -1,0 +1,23 @@
+<% provide(:title, @story.story_name) %>
+<section class="product-sec">
+  <div class="container">
+    <h1><%= @story.story_name %></h1>
+    <div class="row">
+      <div class="col-md-6 slider-sec">
+        <div id="myCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="active item carousel-item">
+            <%= image_tag @story.img %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 slider-content">
+        <%= render "story_details" %>
+      </div>
+      <div class="col-md-offset-1 col-md-10 slider-chapter">
+        <%= render "list_chapters" %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="col-lg-2 col-md-3 col-sm-4">
+  <%= link_to story do %>
+    <div class="item">
+      <div class="picture">
+        <%= image_tag story.img %>
+        <% if story.chapters.exists? %>
+          <span class="time">
+            <%= time_ago_in_words story.chapters.last.created_at %>
+          </span>
+          <span class="chap">
+            <%= t ".chapter" %><%= story.chapters.maximum("chapter_number") %>
+          </span>
+        <% end %>
+      </div>
+      <h3><span class="name"><%= story.story_name %></span></h3>
+      <h6><%= story.author %></h6>
+      <div class="hover">
+        <h3><%= t ".categories" %></h3>
+        <h5 class="view"><%= t ".total_view" %><%= story.views %></h5>
+      </div>
+    </div>
+  <% end %>
+</div>

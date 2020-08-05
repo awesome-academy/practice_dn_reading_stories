@@ -1,7 +1,4 @@
 class ApplicationController < ActionController::Base
-
-  include SessionsHelper
-  
   before_action :set_locale
 
   def set_locale
@@ -12,5 +9,19 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def load_story
+    @story = Story.find_by id: params[:id]
+    return if @story
+    flash[:danger] = t ".not_found"
+    redirect_to root_path
+  end
+
+  def load_chapter
+    @chapter = Chapter.find_by id: params[:id]
+    return if @chapter
+    flash[:danger] = t ".danger"
+    redirect_to stories_path
   end
 end
