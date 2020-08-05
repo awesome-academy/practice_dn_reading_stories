@@ -1,0 +1,12 @@
+<% provide(:title, @category.category_name) %>
+<div class="container">
+    <h3>Category "<%= @category.category_name %>"</h3>
+    <%= render  "static_page/story" %>
+</div>
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 offset-md-4">
+    <%= will_paginate @stories %>
+    </div>
+</div>

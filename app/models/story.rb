@@ -10,4 +10,6 @@ class Story < ApplicationRecord
     order(created_at: :DESC) if term.blank?
     where("story_name LIKE :search OR author LIKE :search", search: "%#{term}%") unless term.blank?
   }
+  scope :order_by_created_at, -> {order(created_at: :DESC)}
+
 end
