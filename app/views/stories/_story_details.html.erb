@@ -1,0 +1,14 @@
+<ul>
+  <li>
+    <span class="name"><%= t ".author" %></span><span class="clm"></span>
+    <span class="detail"><%= @story.author %></span>
+  </li>
+  <li>
+    <span class="name"><%= t ".lastest_chapter" %></span><span class="clm"></span>
+    <span class="detail"><%= @story.chapters.lastest_chapter unless @story.chapters.lastest_chapter.blank? %></span>
+  </li>
+  <li>
+    <span class="name"><%= t ".total_view" %></span><span class="clm"></span>
+    <span class="detail"><%= @story.views %></span>
+  </li>
+</ul>

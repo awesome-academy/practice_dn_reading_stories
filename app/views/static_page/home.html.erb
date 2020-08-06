@@ -31,7 +31,7 @@
     </a>
   </div>
 
-  <section> 
+  <section>
     <div class="container">
       <h3>Hot stories</h3>
       <%= render  "hot_story" %>
@@ -43,7 +43,6 @@
       <h3>List stories</h3>
       <%= render  "story" %>
     </div>
-
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4 offset-md-4">
@@ -57,10 +56,12 @@
     <h3>Search results for "<%= params[:term] %>"</h3>
     <%= render  "story" %>
   </div>
+
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4 offset-md-4">
       <%= will_paginate @stories %>
     </div>
   </div>
-<% end %> 
+<% end %>
+

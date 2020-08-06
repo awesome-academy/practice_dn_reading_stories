@@ -4,9 +4,9 @@ class CategoriesController < ApplicationController
         if @category
             @stories = @category.stories.order_by_created_at.paginate(page: params[:page])
         else
-            flash[:danger] = "Can't find this category name!!" 
+            flash[:danger] = "Can't find this category name!!"
             redirect_to root_path
         end
     end
-    
+
 end

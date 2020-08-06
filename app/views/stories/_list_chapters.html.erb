@@ -1,0 +1,14 @@
+<table class="table">
+  <tr>
+    <th><%= t ".chapter" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".update_time" %></th>
+  </tr>
+  <%= render @chapters %>
+</table>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 offset-md-4">
+    <%= will_paginate @chapters %>
+  </div>
+</div>

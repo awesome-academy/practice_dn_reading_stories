@@ -1,0 +1,6 @@
+<tr>
+  <td><%= chapter.chapter_number %>
+  <td><%= link_to chapter.chapter_name, chapter_path(chapter.id) %></td>
+  <td><%= chapter.created_at %></td>
+</tr>
+<%= render @chapters if @chapter.present? %>
