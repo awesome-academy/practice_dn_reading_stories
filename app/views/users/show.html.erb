@@ -1,0 +1,10 @@
+<% provide(:title, @user.username) %>
+<div class="container">
+    <h3><span><i class="fas fa-book"></i></span> User name: <%= @user.username %></h3>
+    <h3><span><i class="fas fa-envelope-open-text"></i> Email: </span><%= @user.email %></h3>
+    <% if @user.sex == 0 %>
+        <h3>Sex: <span><i class="fas fa-venus"></i></span></h3>
+    <% else %>
+        <h3>Sex: <span><i class="fas fa-mars"></i></span></h3>
+    <% end %>
+</div>
